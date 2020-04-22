@@ -17,7 +17,7 @@ public class TestDataReading {
 	public ArrayList<String> getdata(String data) throws IOException
 	{
 		FileInputStream file = new FileInputStream(
-				"C:\\Users\\Rajeshwari\\eclipse-workspace\\" + "ExcelReading\\Reading Data from Excel.xlsx");
+				"C:\\Users\\Rajeshwari\\eclipse-workspace\\APIBddFramework\\Reading Data from Excel.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(file);
 		int no_sheet = workbook.getNumberOfSheets();
 		ArrayList<String> test_data = new ArrayList<String>();
