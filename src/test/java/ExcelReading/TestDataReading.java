@@ -13,16 +13,16 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class TestDataReading {
-	
-	public ArrayList<String> getdata(String data) throws IOException
-	{
+
+	public ArrayList<String> getdata(String data, String sheetname) throws IOException {
+		
 		FileInputStream file = new FileInputStream(
 				"C:\\Users\\Rajeshwari\\eclipse-workspace\\APIBddFramework\\Reading Data from Excel.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(file);
 		int no_sheet = workbook.getNumberOfSheets();
 		ArrayList<String> test_data = new ArrayList<String>();
 		for (int i = 0; i < no_sheet; i++) {
-			if (workbook.getSheetName(i).equalsIgnoreCase("testdata")) {
+			if (workbook.getSheetName(i).trim().equalsIgnoreCase(sheetname)) {
 				XSSFSheet sheet = workbook.getSheetAt(i);
 				// identifying the first row to scan the header
 				Iterator<Row> rows = sheet.rowIterator();
@@ -39,24 +39,28 @@ public class TestDataReading {
 					}
 					k++;
 				}
+				
 				// Now the we need to locate the row whose testdata we have to read:
 				while (rows.hasNext()) {
 					Row row = rows.next();
-					if (row.getCell(col_num).getStringCellValue().equalsIgnoreCase(data)) {
+					System.out.println("hello world in the excel " + row.getCell(col_num).getStringCellValue().equalsIgnoreCase(data));
+					
+					if (row.getCell(col_num).getStringCellValue().trim().equalsIgnoreCase(data.trim())) {
 						// read the data of a particular row with a coulumm (add profile name)
 						System.out.println(row.getCell(1));
 						// now read all the cell data for that homepage Tc
 						Iterator<Cell> td = row.cellIterator();
-
 						while (td.hasNext()) {
-							//Cell cell = td.next();
-							//System.out.print(td.next());
-							//if(td.next().getCellTypeEnum() == CellType.STRING)
-								test_data.add(td.next().getStringCellValue());
-							//else
-								//test_data.add(NumberToTextConverter.toText(cell.getNumericCellValue()));
+							Cell cell = td.next();
+							// System.out.print(td.next());
+							if (cell.getCellType() == CellType.STRING)
+							{
+								test_data.add(cell.getStringCellValue());
 							}
-						
+							else
+								test_data.add(NumberToTextConverter.toText(cell.getNumericCellValue()));
+						}
+
 					}
 				}
 			}
@@ -68,9 +72,9 @@ public class TestDataReading {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		TestDataReading s1 = new TestDataReading();
-		ArrayList<String> test_data = s1.getdata("logout");
+		ArrayList<String> test_data = s1.getdata("Rest AddBook ","RestAssured");
 		System.out.println(test_data);
-		
+
 	}
 
 }
