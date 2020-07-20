@@ -9,8 +9,11 @@ public class Hooks {
 	@Before("@deleteplace")
 	public void beforeScenario() throws IOException
 	{
-		// execute this only when place id is not null
-		//this is test branch
+
+		// execute this only when place id is null
+		//this is test123
+		//this is test 12345 
+
 		placeValidationStepDef def = new placeValidationStepDef();
 		if(placeValidationStepDef.placeID == null)
 		{
