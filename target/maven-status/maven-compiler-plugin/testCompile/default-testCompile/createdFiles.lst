@@ -1,6 +1,6 @@
-stepDefinations\placeValidationStepDef.class
 Resources\APIResources.class
 Resources\Utils.class
+Resources\TestDataBuild.class
+stepDefinations\placeValidationStepDef.class
 cucumber\Options\TestRunner.class
 stepDefinations\Hooks.class
-Resources\TestDataBuild.class

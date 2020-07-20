@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-04-20T14:18:10.903Z",
+        "start_timestamp": "2020-04-22T15:01:35.306Z",
         "line": 16,
         "name": "Verify if place is being successfully added using AdddplaceAPI",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1250000000,
+              "duration": 2640000000,
               "status": "passed"
             },
             "line": 6,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 1890000000,
+              "duration": 4858000000,
               "status": "passed"
             },
             "line": 7,
@@ -74,7 +74,7 @@
           },
           {
             "result": {
-              "duration": 713000000,
+              "duration": 1094000000,
               "status": "passed"
             },
             "line": 9,
@@ -118,7 +118,7 @@
           },
           {
             "result": {
-              "duration": 297000000,
+              "duration": 563000000,
               "status": "passed"
             },
             "line": 11,
@@ -146,7 +146,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-04-20T14:18:15.256Z",
+        "start_timestamp": "2020-04-22T15:01:44.601Z",
         "before": [
           {
             "result": {
@@ -166,7 +166,6 @@
         "steps": [
           {
             "result": {
-              "duration": 15000000,
               "status": "passed"
             },
             "line": 23,
@@ -178,7 +177,7 @@
           },
           {
             "result": {
-              "duration": 219000000,
+              "duration": 281000000,
               "status": "passed"
             },
             "line": 24,
